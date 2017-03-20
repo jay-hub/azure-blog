@@ -1,0 +1,5 @@
+D:\Life\Trainings\Azure\Assignment\NewProject\ISVInternational\ISVInternational.Entities\bin\Release\ISVInternational.Entities.dll
+D:\Life\Trainings\Azure\Assignment\NewProject\ISVInternational\ISVInternational.Entities\bin\Release\ISVInternational.Entities.pdb
+D:\Life\Trainings\Azure\Assignment\NewProject\ISVInternational\ISVInternational.Entities\obj\Release\ISVInternational.Entities.csprojResolveAssemblyReference.cache
+D:\Life\Trainings\Azure\Assignment\NewProject\ISVInternational\ISVInternational.Entities\obj\Release\ISVInternational.Entities.dll
+D:\Life\Trainings\Azure\Assignment\NewProject\ISVInternational\ISVInternational.Entities\obj\Release\ISVInternational.Entities.pdb

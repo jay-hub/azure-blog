@@ -1,0 +1,21 @@
+﻿@model System.Collections.Generic.List<ISVInternational.Entities.DTO.UserDetailsDto>
+
+@{
+    ViewBag.Title = "Blog Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Recent Blogs</h2>
+
+@foreach (var item in @Model)
+{
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">@item.DisplayName &apos; Blog</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Last updated: @item.AuthTime</h6>
+            <p class="card-text">@item.Bio</p>
+            <a href="@Url.Action("Posts", "Post", new {id = item.UserGuid.ToString()})" class="card-link">View Blog</a>
+            <a href="@Url.Action("Favourite", "Post", new {item.UserId})" class="card-link">Add to Favourits</a>
+        </div>
+    </div>
+}

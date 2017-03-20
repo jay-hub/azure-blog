@@ -1,0 +1,22 @@
+﻿@model System.Collections.Generic.List<ISVInternational.Entities.DTO.BlogPostDTO>
+
+@{
+    ViewBag.Title = "Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Posts</h2>
+
+@foreach (var post in Model)
+{
+
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">@post.BlogTitle &apos; Blog</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Last updated: @post.CreatedDateDisplay</h6>
+            <p class="card-text">@Html.Encode(post.Post)</p>
+            <a href="@Url.Action("View", "Post", new {id = post.Id})" class="card-link">View Post</a>
+        </div>
+    </div>
+
+}

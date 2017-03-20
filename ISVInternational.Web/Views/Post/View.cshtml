@@ -1,0 +1,46 @@
+﻿@model ISVInternational.Entities.DTO.BlogPostDTO
+
+@{
+    ViewBag.Title = "Blog Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.HiddenFor(p=>p.Id)
+@Html.Hidden("Id",Model.Id)
+<div class="card">
+    <h3 class="card-header">Blog Article</h3>
+    <div class="card-block">
+        <h4 class="card-title">@Model.BlogTitle</h4>
+        <p class="card-text">
+            @Html.Encode(Model.Post)
+        </p>
+        <button id="txtComment" class="btn btn-primary">Comment</button>
+    </div>
+    <div class="card-footer text-muted">
+        Updated on @Model.CreatedDateDisplay
+    </div>
+</div>
+
+<div id="commentsView">
+
+</div>
+
+@foreach (var comment in Model.Comments)
+{
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@comment.CommentTitle</h5>
+                <small>@comment.PostedDate.ToString("f")</small>
+            </div>
+            <p class="mb-1">@comment.CommentContent</p>
+            <small>@comment.PostedUserDisplay</small>
+        </a>
+    </div>
+}
+<script>
+    var url = '@Url.Action("ShowCommentDialog", "Post")';
+    $('#txtComment').click(function() {
+        var keyWord = @Model.Id;
+        $('#commentsView').load(url, { id: keyWord });
+    });
+</script>

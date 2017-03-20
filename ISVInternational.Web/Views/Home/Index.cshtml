@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ISV Bloggin Platform</h1>
+    <p class="lead">
+        ISV is a leading bloggin platform that connects the creative bloggers from all around the world.
+    </p>
+    <p><a href="https://www.google.lk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiQuM--zNvSAhXDs48KHQNPAG8QFgg7MAA&url=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fisv-corporation&usg=AFQjCNHfRmvbIESGsY7Fe-N_c_NyfSCC7Q&sig2=O-M0t4KG3qRbqiXHKpBTDg" class="btn btn-primary btn-lg">Find more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Blogging is simpler than ever. Just sign in to continue blogging with the most advanced system.
+        </p>
+        <p>
+            @Html.ActionLink("Sign up", "SignUp", new { controller = "Account" }, new { @class = "btn btn-primary" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Blogging Profile</h2>
+        <p>Maintain your blogging profile to connect with all bloggers around the world</p>
+        <p>
+            @Html.ActionLink("Sign up", "SignUp", new { controller = "Account"}, new { @class = "btn btn-primary" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Cloud Infrastructure</h2>
+        <p>ISV Bloggin platform is back by Microsoft Azure Intrastructure.</p>
+        <p>
+            @Html.ActionLink("Sign up", "SignUp", new { controller = "Account" }, new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>

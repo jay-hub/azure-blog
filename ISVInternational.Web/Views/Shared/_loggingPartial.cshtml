@@ -1,0 +1,29 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <text>
+        <ul class="nav navbar-nav navbar-right">
+            <li  data-toggle="popover" data-placement="bottom" title="User Profile" data-content="Click <a href='@Url.Action("Index", "Profile")' title='test add link'> here </a> to edit your profile" class="example-popover">
+                <a id="profile-link" class="nav-link">@User.Identity.Name</a>
+                
+            </li>
+            <li>@Html.ActionLink("Sign out", "SignOut", new { controller = "Account", id = 1 }, new { @class = "nav-link " })</li>
+        </ul>
+    </text>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Sign up", "SignUp", new { controller = "Account" }, new { @class = "nav-link" })</li>
+        <li>@Html.ActionLink("Sign in", "SignIn", new { controller = "Account" }, new { @class = "nav-link" })</li>
+    </ul>
+}
+
+<script type="text/javascript">
+    $(function () {
+        
+        $('.example-popover').popover({
+            container: 'body',
+            html: true
+        });
+    })
+</script>
